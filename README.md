@@ -1,3 +1,5 @@
+![Margin, a plugin for Tern: review Markdown with your agents, one block at a time. Signed Nicholas DiMoro.](.github/assets/banner.jpg)
+
 # Margin
 
 [![Test](https://github.com/Noctivoro/tern-margin/actions/workflows/test.yml/badge.svg)](https://github.com/Noctivoro/tern-margin/actions/workflows/test.yml)
@@ -53,6 +55,14 @@ tern open notes.md
 | `?` | Show more keys |
 
 In the comment box, `enter` saves, `shift+enter` adds a line and `esc` cancels. `⌃U`, `⌃K` and `⌃W` delete to line start, to line end and a word back. `⌘Z` undoes.
+
+On macOS, holding a letter key shows the accent menu instead of repeating, so holding `k` or `j` moves only once. Holding `↓` or `↑` repeats. To make letters repeat in Tern (as most terminals do), turn off press-and-hold for Tern only, then quit and reopen Tern:
+
+```sh
+defaults write so.stencil.tern ApplePressAndHoldEnabled -bool false
+```
+
+`defaults delete so.stencil.tern ApplePressAndHoldEnabled` undoes it.
 
 ### Which opens use Margin
 
@@ -148,3 +158,11 @@ Headless `tern serve` loads no plugins except Tern's own test fixtures, which is
 | `lib/editor.luau` | The comment box's text editing |
 | `cli/core.mjs`, `bin/margin.mjs` | The `margin` CLI |
 | `margin.css` | Block styles, scoped to `plugin.margin.review` |
+
+## Also by me
+
+[Chirp](https://github.com/Noctivoro/tern-chirp) gives Tern a small robot voice that beeps when an agent finishes or needs you. Jev picks the mood, so you can hear how the turn went.
+
+---
+
+Made by [Nicholas DiMoro](https://nickdimoro.com).
