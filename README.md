@@ -10,7 +10,7 @@ Margin was built for reviewing plans and drafts with coding agents. An agent run
 
 ![A Markdown file in Margin: rendered headings, a list and a table, two comments shown under their blocks, the table selected, and a comment being written at the bottom](docs/screenshot.png)
 
-The review screen is a [Tern Surface Protocol](https://docs.stencil.so/tern/protocol/) program: it runs in a pane like any command, and Tern draws it natively. So it works the same in a desktop window, the iOS app and the web client, with nothing to install on the client.
+The review screen is a [Tern Surface Protocol](https://docs.stencil.so/tern/protocol/) program: it runs in a pane like any command, and Tern draws it natively. No plugin code runs in the window, so any Tern client attached to the session should be able to show it.
 
 Tested with Tern 0.6.1. MIT licensed.
 
@@ -80,9 +80,9 @@ margin doctor docs/page.md --json  # exit 1 when CriticMarkup remains
 
 A script can also run `margin review` directly. It exits 0 on `D`, 3 on `q` (or Ctrl+C), 4 if Tern discards its screen, and 5 outside Tern. `margin doctor` counts CriticMarkup outside fenced code and inline code; use it as a gate before publishing a reviewed file.
 
-## Phones, the web client and other machines
+## Other Tern clients
 
-`margin open` and `margin review` run on the machine that holds the file, in an ordinary pane. Tern's session daemon starts them, so it doesn't matter which client has focus. Every client attached to that session (desktop, iOS, web) draws the review and sends it keys and clicks. Install Margin on the machine where your files live; clients need nothing.
+`margin open` and `margin review` run on the machine that holds the file, in an ordinary pane. Tern's session daemon starts them, so the review doesn't depend on which window has focus or on any plugin being installed in it. By Tern's design, every client attached to that session draws the same pane, so Tern's announced iOS app and web client should show the review too. Neither is publicly available yet, so Margin is tested on the macOS desktop app only. Install Margin on the machine where your files live.
 
 ## How comments are stored
 

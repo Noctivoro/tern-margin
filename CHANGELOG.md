@@ -2,7 +2,7 @@
 
 ## 0.2.0
 
-The review screen is now a Tern Surface Protocol program instead of a plugin block, so it works in every Tern client.
+The review screen is now a Tern Surface Protocol program instead of a plugin block. It no longer depends on plugin code in the window, so it should also work in Tern's upcoming iOS and web clients (tested on macOS only).
 
 - New `margin review FILE` runs the review in the current pane. `margin open` starts it in a split with `tern split` and waits for its exit status, so it no longer depends on which client has focus, and plugin reloads can't end the wait early.
 - Exit status is the result: 0 for done (`D`), 3 for closed early (`q`). Receipt files are gone.
