@@ -1,0 +1,5 @@
+node_modules/
+# Regenerate with `tern plugin types .` (matches the installed Tern).
+tern.d.luau
+# Written by `npm test` from test/fixtures/.
+test/fixtures.gen.luau

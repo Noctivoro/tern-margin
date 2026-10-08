@@ -1,0 +1,17 @@
+{
+  "name": "tern-margin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Margin: review Markdown files in Tern and leave CriticMarkup comments.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "margin": "bin/margin.mjs"
+  },
+  "scripts": {
+    "test": "node test/gen-fixtures.mjs && luau test/run.luau && node --test test/*.test.mjs"
+  }
+}
