@@ -1,40 +1,4 @@
 // Pure helpers behind bin/margin.mjs, kept separate so tests can import them.
-import { readdirSync, readFileSync } from "node:fs";
-import { homedir } from "node:os";
-import { join } from "node:path";
-
-// Where the plugin writes receipts: `<state>/plugin-data/margin/receipts`.
-export function receiptsDir(env = process.env, platform = process.platform) {
-	let state;
-	if (env.TERN_CONFIG_DIR) state = env.TERN_CONFIG_DIR;
-	else if (platform === "darwin") state = join(homedir(), "Library", "Application Support", "Tern");
-	else if (platform === "win32") state = join(env.LOCALAPPDATA ?? homedir(), "Tern");
-	else state = join(env.XDG_STATE_HOME ?? join(homedir(), ".local", "state"), "tern");
-	return join(state, "plugin-data", "margin", "receipts");
-}
-
-// The newest receipt for `path` finished at or after `since` (epoch seconds).
-export function findReceipt(dir, path, since) {
-	let names;
-	try {
-		names = readdirSync(dir);
-	} catch {
-		return null;
-	}
-	let best = null;
-	for (const name of names) {
-		if (!name.endsWith(".json")) continue;
-		let r;
-		try {
-			r = JSON.parse(readFileSync(join(dir, name), "utf8"));
-		} catch {
-			continue;
-		}
-		if (r.path !== path || typeof r.finished_at !== "number" || r.finished_at < since) continue;
-		if (best === null || r.finished_at > best.finished_at) best = r;
-	}
-	return best;
-}
 
 const MARKERS = {
 	comments: "{>>",

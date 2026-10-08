@@ -1,17 +1,28 @@
 {
   "name": "tern-margin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Margin: review Markdown files in Tern and leave CriticMarkup comments.",
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "bin": {
     "margin": "bin/margin.mjs"
   },
+  "files": [
+    "bin",
+    "cli",
+    "review",
+    "plugin.toml",
+    "window.luau",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@stencil-hq/tern": "0.1.0"
+  },
   "scripts": {
-    "test": "node test/gen-fixtures.mjs && luau test/run.luau && node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs"
   }
 }

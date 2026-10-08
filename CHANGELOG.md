@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0
+
+The review screen is now a Tern Surface Protocol program instead of a plugin block, so it works in every Tern client.
+
+- New `margin review FILE` runs the review in the current pane. `margin open` starts it in a split with `tern split` and waits for its exit status, so it no longer depends on which client has focus, and plugin reloads can't end the wait early.
+- Exit status is the result: 0 for done (`D`), 3 for closed early (`q`). Receipt files are gone.
+- The comment box supports Tern's native editing (selection, `⌘⌫`, `⌘Z`) when it is on.
+- Install with `npm install -g github:Noctivoro/tern-margin` (Node 22+). The Tern plugin is now optional and only adds the **Review this Markdown file** palette command.
+- `tern open FILE.md` is no longer routed to Margin; it opens Tern's file view.
+- The Luau implementation is replaced by JavaScript modules with the same rules and tests.
+
 ## 0.1.0
 
 First release.

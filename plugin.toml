@@ -1,15 +1,7 @@
 schema = 1
 id = "margin"
 name = "Margin"
-version = "0.1.0"
-description = "Review Markdown files in Tern and leave CriticMarkup comments in the margin."
+version = "0.2.0"
+description = "Adds \"Review this Markdown file\" to the palette; the review runs as the margin command."
 icon = "file"
-host = "host.luau"
 window = "window.luau"
-styles = ["margin.css"]
-
-[[blocks]]
-id = "review"
-title = "Margin"
-files = ["*.md", "*.markdown"]
-palette = false
