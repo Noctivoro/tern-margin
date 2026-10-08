@@ -56,7 +56,7 @@ tern open notes.md
 
 In the comment box, `enter` saves, `shift+enter` adds a line and `esc` cancels. `⌃U`, `⌃K` and `⌃W` delete to line start, to line end and a word back. `⌘Z` undoes.
 
-On macOS, holding a letter key shows the accent menu instead of repeating, so holding `k` or `j` moves only once. Holding `↓` or `↑` repeats. To make letters repeat in Tern (as most terminals do), turn off press-and-hold for Tern only, then quit and reopen Tern:
+On macOS, holding a letter key shows the accent menu instead of repeating, so holding `k` or `j` moves only once. To make held keys repeat in Tern (as most terminals do), turn off press-and-hold for Tern only, then quit and reopen Tern:
 
 ```sh
 defaults write so.stencil.tern ApplePressAndHoldEnabled -bool false
