@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Uses `@stencil-hq/tern` 0.2.0, the Surface Protocol version current Tern speaks (0.1.0 still sent the palette verb and blob `id` that 0.2.0 dropped).
+
 ## 0.2.0
 
 The review screen is now a Tern Surface Protocol program instead of a plugin block. It no longer depends on plugin code in the window, so it should also work in Tern's upcoming iOS and web clients (tested on macOS only).

@@ -20,7 +20,7 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "@stencil-hq/tern": "0.1.0"
+    "@stencil-hq/tern": "0.2.0"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs"
